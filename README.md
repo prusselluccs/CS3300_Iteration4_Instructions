@@ -195,6 +195,8 @@ end
 9. You can view the report by clicking on the `coverage` directory on the left pane and then right-clicking and downloading the file `index.html` <br>
 10. You can then view the report in your browser.
 
+![img.png](img.png)
+
 ### Rails - Devise User Authentication & CircleCI 
 To setup the User Authentication and CircleCI, follow the instructions
 using the URL below.
