@@ -2,12 +2,15 @@
 This guide is to set up integration testing for rails, adding test coverage with Simplecov, set up devise for rails, and set up circleci
 
 ### Step 1 - Change directories into your portfolio application <br>
-    `cd <Your application name>`
+`cd <Your application name>`
 
-### Step 2 - Unit test for title & description validates presence of
+### Step 2 - Unit test for validating the presence of the description
 
-1. Make sure that you have code in the spec/models/projects.rb for testing the presence of both the title and description
-2. Add code in the models/project.rb file to validate the title and description
+1. Complete the unit test for validating the presence of the description <br>
+   a. Make sure that you have code in the spec/models/projects.rb for testing the presence of the description <br>
+   b. Run `rspec ./spec/models/projects.rb` and validate that the test fails <br>
+   c. Add the appropriate code in the models/project.rb file to validate the presence of the description <br>
+   d. Run `rspec ./spec/models/projects.rb` and validate that the test passed <br>
 
 ### Step 3 - Add scope specs to the spec/models/projects_spec.rb
 
@@ -33,8 +36,9 @@ This guide is to set up integration testing for rails, adding test coverage with
    end
    ```
 ### Step 4 - Create functional test for Projects controller
-1. Create Projects spec spec/controller/projects_spec.rb and add the following code
+1. Create Projects spec file: `spec/controller/projects_spec.rb` 
 
+2. Add the following code to the `spec/controller/projects_spec.rb` file
 ```ruby
 require 'rails_helper'
 
@@ -54,7 +58,6 @@ RSpec.describe ProjectsController, type: :controller do
         end
     end
 end
-
    ```
 ### Step 5 - Create integration spec and a home page
 1. Add capybara to `Gemfile` <br>
@@ -66,8 +69,8 @@ end
 2. Make sure you are in your projects root directory
 3. Create first feature test by running the following command <br>
 
-
    `bundle exec rails g rspec:feature home_page`
+
 
 3. This will create spec/features/home_page_spec.rb file. <br>
    Now add the following code to this file
@@ -136,6 +139,7 @@ RSpec.feature "Projects", type: :feature do
     end
   end
 
+## Add the following code but comment it out. We are working on getting this to work
 #  context "Remove existing project" do
 #    let!(:project) { Project.create(title: "Test title", description: "Test content") }
 #    scenario "remove project" do
@@ -153,7 +157,7 @@ end
 
     `bundle exec rails stats`
 
-2. To install simplecov, add to your `gemfile` to the `group :test do` <br>
+2. To install simplecov, add to your `gemfile` in the `group :test do` <br>
 `gem 'simplecov'`
 3. Run the command <br>
 `bundle install`
@@ -186,7 +190,7 @@ end
 `config.eager_load = true`
 7. In the `.gitignore` file, add the following code <br>
 `/coverage`
-8. Run a coverage report by typing in the following command
+8. Run a coverage report by typing in the following command <br>
 `bundle exec rspec`
 9. You can view the report by clicking on the `coverage` directory on the left pane and then right-clicking and downloading the file `index.html` <br>
 10. You can then view the report in your browser.
