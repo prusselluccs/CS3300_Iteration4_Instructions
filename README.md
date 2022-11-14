@@ -7,12 +7,12 @@ This guide is to set up integration testing for rails, adding test coverage with
 ### Step 2 - Unit test for validating the presence of the description
 
 1. Complete the unit test for validating the presence of the description <br>
-   a. Make sure that you have code in the spec/models/projects.rb for testing the presence of the description <br>
-   b. Run `rspec ./spec/models/projects.rb` and validate that the test fails <br>
-   c. Add the appropriate code in the models/project.rb file to validate the presence of the description <br>
-   d. Run `rspec ./spec/models/projects.rb` and validate that the test passed <br>
+   a. Make sure that you have code in the spec/models/project_spec.rb for testing the presence of the description <br>
+   b. Run `rspec ./spec/models/project_spec.rb` and validate that the test fails <br>
+   c. Add the appropriate code in the models/project_spec.rb file to validate the presence of the description <br>
+   d. Run `rspec ./spec/models/project_spec.rb` and validate that the test passed <br>
 
-### Step 3 - Add scope specs to the spec/models/projects_spec.rb
+### Step 3 - Add scope specs to the spec/models/project_spec.rb
 
 ```ruby
     require "rails_helper"
@@ -36,9 +36,9 @@ This guide is to set up integration testing for rails, adding test coverage with
    end
    ```
 ### Step 4 - Create functional test for Projects controller
-1. Create Projects spec file: `spec/controller/projects_spec.rb` 
+1. Create Projects spec file: `spec/controller/project_spec.rb` 
 
-2. Add the following code to the `spec/controller/projects_spec.rb` file
+2. Add the following code to the `spec/controller/project_spec.rb` file
 ```ruby
 require 'rails_helper'
 
@@ -90,7 +90,7 @@ end
     `bundle exec rails g rspec:feature projects`
 
 
-2. This will create spec/features/projects_spec.rb file. <br>
+2. This will create spec/features/project_spec.rb file. <br>
    Add the following code to this file
 ```ruby
 require 'rails_helper'
