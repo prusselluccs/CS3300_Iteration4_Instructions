@@ -164,7 +164,7 @@ end
 4. Add the following code to `spec/rails_helper.rb`. You can add it at the end of the file<br>
 ```ruby
 require 'simplecov'
-Simplecov.start 'rails' do
+SimpleCov.start 'rails' do
     add_filter '/bin/'
     add_filter '/db/'
     add_filter '/spec/'   # for rspec
